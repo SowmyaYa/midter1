@@ -45,6 +45,11 @@ class CarTest extends TestCase
         $car->save();
         $this->assertTrue($car->delete());
     }
+    public function testModelType()
+    {
+        $car=Car::find(1);
+        $this->assertInternalType('string', $car->Model);
 
+    }
 
 }
