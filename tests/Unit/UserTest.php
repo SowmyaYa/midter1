@@ -14,6 +14,12 @@ class UserTest extends TestCase
      *
      * @return void
     */
+    public function testThree(){
+        $users=User::All();
+        $userCount = $users->count();
+        $actual=50;
+        $this->assertEquals($userCount,$actual);
+    }
     /*public function testOne()
     {
         $user = new User();
@@ -21,8 +27,8 @@ class UserTest extends TestCase
         $user->email = 'harry@potter.com';
         $user->password = 'harrypotter';
         $this->assertTrue($user->save());
-    }*/
-
+    }
+    */
     //Test  for deletion
     public function testTwo()
     {
@@ -34,12 +40,7 @@ class UserTest extends TestCase
         $this->assertTrue($user->delete());
     }
     //Test for counting
-    public function testThree(){
-        $users=User::All();
-        $userCount = $users->count();
-        $actual=50;
-        $this->assertEquals($userCount,$actual);
-    }
+
     //Test for updation
     public function testFour()
     {

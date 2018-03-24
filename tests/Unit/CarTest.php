@@ -27,7 +27,7 @@ class CarTest extends TestCase
         $car->Year = '1998';
         $this->assertTrue($car->save());
     }
-    /*public function testUpdateCar()
+    public function testUpdateCar()
     {
         $car = new Car();
         $car->Make = 'Honda';
@@ -35,7 +35,7 @@ class CarTest extends TestCase
         $car->Year = '1998';
         $car->save();
         $this->assertTrue($car->update());
-    }*/
+    }
     public function testDeleteCar()
     {
         $car = new Car();
@@ -50,6 +50,11 @@ class CarTest extends TestCase
         $car=Car::find(1);
         $this->assertInternalType('string', $car->Model);
 
+    }
+    public function testMake()
+    {
+        $car=Car::find(1);
+        $this->assertEquals( 'Ford', $car->Make);
     }
 
 }
