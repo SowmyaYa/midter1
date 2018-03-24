@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <form>
+    <form class="contact-form" method="POST" action="{{route('contact.store')}}">
+        {{ csrf_field() }}
         <div class="form-group">
             <label for="exampleFormControlInput1">Name</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Email address</label>
