@@ -22,7 +22,7 @@ class UserTest extends TestCase
         $user->password = 'harrypotter';
         $this->assertTrue($user->save());
     }
-    */
+     */
     public function testTwo()
     {
         $user = new User();
@@ -31,5 +31,11 @@ class UserTest extends TestCase
         $user->password = 'harrypotter';
         $user->save();
         $this->assertTrue($user->delete());
+    }
+    public function testThree(){
+        $users=User::All();
+        $userCount = $users->count();
+        $actual=50;
+        $this->assertEquals($userCount,$actual);
     }
 }
