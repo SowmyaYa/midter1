@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Constraint\IsType;
 use App\Car;
 class CarTest extends TestCase
 {
@@ -55,6 +56,14 @@ class CarTest extends TestCase
     {
         $car=Car::find(1);
         $this->assertEquals( 'Ford', $car->Make);
+        $this->assertEquals( 'Honda', $car->Make);
+        $this->assertEquals( 'Toyota', $car->Make);
+    }
+
+    public function testYear()
+    {
+        $car=Car::find(1);
+        $this->assertInternalType(IsType::TYPE_STRING, $car->Year);
     }
 
 }
