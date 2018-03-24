@@ -13,14 +13,23 @@ class UserTest extends TestCase
      * A basic test example.
      *
      * @return void
-     */
+
     public function testOne()
     {
         $user = new User();
-        $user->name = 'Ron';
-        $user->email = 'ronaldo@examp.le';
-        $user->password = 'asdfghjkl';
-
+        $user->name = 'Harry';
+        $user->email = 'harry@potter.com';
+        $user->password = 'harrypotter';
         $this->assertTrue($user->save());
+    }
+    */
+    public function testTwo()
+    {
+        $user = new User();
+        $user->name = 'Harry';
+        $user->email = 'harry@potter.com';
+        $user->password = 'harrypotter';
+        $user->save();
+        $this->assertTrue($user->delete());
     }
 }
