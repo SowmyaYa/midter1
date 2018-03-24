@@ -13,6 +13,7 @@ class CarTest extends TestCase
      *
      * @return void
      */
+
     public function testInsertCar()
     {
         $car = new Car();
@@ -30,5 +31,15 @@ class CarTest extends TestCase
         $car->save();
         $this->assertTrue($car->update());
     }*/
+    public function testDeleteCar()
+    {
+        $car = new Car();
+        $car->Make = 'Honda';
+        $car->Model = 'city';
+        $car->Year = '1998';
+        $car->save();
+        $this->assertTrue($car->delete());
+    }
+
 
 }
