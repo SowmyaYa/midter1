@@ -13,7 +13,12 @@ class CarTest extends TestCase
      *
      * @return void
      */
-
+    public function testCount(){
+        $cars=Car::All();
+        $carCount = $cars->count();
+        $actual=50;
+        $this->assertEquals($carCount,$actual);
+    }
     public function testInsertCar()
     {
         $car = new Car();
